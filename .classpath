@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="DROOLS/Drools"/>
+	<classpathentry kind="lib" path="lib/ansj_seg-5.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/nlp-lang-1.7.2.jar"/>
+	<classpathentry kind="lib" path="lib/sqljdbc42.jar"/>
+	<classpathentry kind="lib" path="lib/fastjson-1.2.51.jar"/>
+	<classpathentry kind="lib" path="lib/guava-27.0-jre.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

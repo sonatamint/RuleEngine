@@ -1,0 +1,572 @@
+package com.sample
+
+rule "常用添加物例外 01.01.02"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "灭菌乳", firedRules not contains "常用添加物例外 01.01.02")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 灭菌乳，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 01.01.02");
+end
+
+rule "常用添加物例外 01.02.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "发酵乳", firedRules not contains "常用添加物例外 01.02.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 发酵乳，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 01.02.01");
+end
+
+rule "常用添加物例外 01.03.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "乳粉和奶油粉", firedRules not contains "常用添加物例外 01.03.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 乳粉和奶油粉，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 01.03.01");
+end
+
+rule "常用添加物例外 01.05.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "稀奶油", firedRules not contains "常用添加物例外 01.05.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 稀奶油，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 01.05.01");
+end
+
+rule "常用添加物例外 02.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "基本不含水的脂肪和油", firedRules not contains "常用添加物例外 02.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 基本不含水的脂肪和油，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 02.01");
+end
+
+rule "常用添加物例外 02.02.01.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "黄油和浓缩黄油", firedRules not contains "常用添加物例外 02.02.01.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 黄油和浓缩黄油，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 02.02.01.01");
+end
+
+rule "常用添加物例外 04.01.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains " 新鲜水果", firedRules not contains "常用添加物例外 04.01.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于  新鲜水果，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 04.01.01");
+end
+
+rule "常用添加物例外 04.02.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "新鲜蔬菜", firedRules not contains "常用添加物例外 04.02.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 新鲜蔬菜，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 04.02.01");
+end
+
+rule "常用添加物例外 04.02.02.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "冷冻蔬菜", firedRules not contains "常用添加物例外 04.02.02.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 冷冻蔬菜，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 04.02.02.01");
+end
+
+rule "常用添加物例外 04.02.02.06"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "发酵蔬菜制品", firedRules not contains "常用添加物例外 04.02.02.06")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 发酵蔬菜制品，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 04.02.02.06");
+end
+
+rule "常用添加物例外 04.03.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "新鲜食用菌和藻类", firedRules not contains "常用添加物例外 04.03.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 新鲜食用菌和藻类，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 04.03.01");
+end
+
+rule "常用添加物例外 04.03.02.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "冷冻食用菌和藻类", firedRules not contains "常用添加物例外 04.03.02.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 冷冻食用菌和藻类，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 04.03.02.01");
+end
+
+rule "常用添加物例外 06.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "原粮", firedRules not contains "常用添加物例外 06.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 原粮，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 06.01");
+end
+
+rule "常用添加物例外 06.02"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "大米及其制品", firedRules not contains "常用添加物例外 06.02")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 大米及其制品，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 06.02");
+end
+
+rule "常用添加物例外 06.03.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "小麦粉", firedRules not contains "常用添加物例外 06.03.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 小麦粉，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 06.03.01");
+end
+
+rule "常用添加物例外 06.03.02.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "生湿面制品", firedRules not contains "常用添加物例外 06.03.02.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 生湿面制品，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 06.03.02.01");
+end
+
+rule "常用添加物例外 06.03.02.02"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "生干面制品", firedRules not contains "常用添加物例外 06.03.02.02")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 生干面制品，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 06.03.02.02");
+end
+
+rule "常用添加物例外 06.04.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "杂粮粉", firedRules not contains "常用添加物例外 06.04.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 杂粮粉，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 06.04.01");
+end
+
+rule "常用添加物例外 08.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "生、鲜肉", firedRules not contains "常用添加物例外 08.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 生、鲜肉，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 08.01");
+end
+
+rule "常用添加物例外 09.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "鲜水产", firedRules not contains "常用添加物例外 09.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 鲜水产，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 09.01");
+end
+
+rule "常用添加物例外 09.03"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "预制水产品", firedRules not contains "常用添加物例外 09.03")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 预制水产品，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 09.03");
+end
+
+rule "常用添加物例外 10.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "鲜蛋", firedRules not contains "常用添加物例外 10.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 鲜蛋，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 10.01");
+end
+
+rule "常用添加物例外 10.03.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "脱水蛋制品", firedRules not contains "常用添加物例外 10.03.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 脱水蛋制品，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 10.03.01");
+end
+
+rule "常用添加物例外 10.03.03"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "蛋液与液态蛋", firedRules not contains "常用添加物例外 10.03.03")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 蛋液与液态蛋，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 10.03.03");
+end
+
+rule "常用添加物例外 11.01.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "白糖及白糖制品", firedRules not contains "常用添加物例外 11.01.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 白糖及白糖制品，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 11.01.01");
+end
+
+rule "常用添加物例外 11.01.02"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "其他糖和糖浆", firedRules not contains "常用添加物例外 11.01.02")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 其他糖和糖浆，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 11.01.02");
+end
+
+rule "常用添加物例外 11.03.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "蜂蜜", firedRules not contains "常用添加物例外 11.03.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 蜂蜜，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 11.03.01");
+end
+
+rule "常用添加物例外 12.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "盐及代盐制品", firedRules not contains "常用添加物例外 12.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 盐及代盐制品，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 12.01");
+end
+
+rule "常用添加物例外 12.09"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "香辛料类", firedRules not contains "常用添加物例外 12.09")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 香辛料类，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 12.09");
+end
+
+rule "常用添加物例外 13.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "婴幼儿配方食品", firedRules not contains "常用添加物例外 13.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 婴幼儿配方食品，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 13.01");
+end
+
+rule "常用添加物例外 13.02"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "婴幼儿辅助食品", firedRules not contains "常用添加物例外 13.02")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 婴幼儿辅助食品，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 13.02");
+end
+
+rule "常用添加物例外 14.01.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "饮用天然矿泉水", firedRules not contains "常用添加物例外 14.01.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 饮用天然矿泉水，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 14.01.01");
+end
+
+rule "常用添加物例外 14.01.02"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "饮用纯净水", firedRules not contains "常用添加物例外 14.01.02")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 饮用纯净水，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 14.01.02");
+end
+
+rule "常用添加物例外 14.01.03"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains " 其他类饮用水", firedRules not contains "常用添加物例外 14.01.03")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于  其他类饮用水，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 14.01.03");
+end
+
+rule "常用添加物例外 14.02.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "果蔬汁(浆)", firedRules not contains "常用添加物例外 14.02.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 果蔬汁(浆)，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 14.02.01");
+end
+
+rule "常用添加物例外 14.02.02"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "浓缩果蔬汁(浆)", firedRules not contains "常用添加物例外 14.02.02")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 浓缩果蔬汁(浆)，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 14.02.02");
+end
+
+rule "常用添加物例外 15.03.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "葡萄酒", firedRules not contains "常用添加物例外 15.03.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 葡萄酒，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 15.03.01");
+end
+
+rule "常用添加物例外 16.02.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "茶叶、咖啡", firedRules not contains "常用添加物例外 16.02.01")
+        $e : Entity(literal matches "可在各类食品中按生产需要适量使用的食品添加剂" || types contains "可在各类食品中按生产需要适量使用的食品添加剂") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 茶叶、咖啡，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("常用添加物例外 16.02.01");
+end
+

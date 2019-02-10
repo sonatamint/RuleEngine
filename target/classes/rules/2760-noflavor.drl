@@ -1,0 +1,407 @@
+package com.sample
+
+rule "禁止添加香料香精 01.01.02"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "灭菌乳", firedRules not contains "禁止添加香料香精 01.01.02")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 灭菌乳，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 01.01.02");
+end
+
+rule "禁止添加香料香精 01.02.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "发酵乳", firedRules not contains "禁止添加香料香精 01.02.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 发酵乳，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 01.02.01");
+end
+
+rule "禁止添加香料香精 01.05.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "稀奶油", firedRules not contains "禁止添加香料香精 01.05.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 稀奶油，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 01.05.01");
+end
+
+rule "禁止添加香料香精 02.01.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "植物油脂", firedRules not contains "禁止添加香料香精 02.01.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 植物油脂，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 02.01.01");
+end
+
+rule "禁止添加香料香精 02.01.02"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "动物油脂", firedRules not contains "禁止添加香料香精 02.01.02")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 动物油脂，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 02.01.02");
+end
+
+rule "禁止添加香料香精 02.01.03"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "无水黄油,无水乳脂", firedRules not contains "禁止添加香料香精 02.01.03")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 无水黄油,无水乳脂，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 02.01.03");
+end
+
+rule "禁止添加香料香精 04.01.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains " 新鲜水果", firedRules not contains "禁止添加香料香精 04.01.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于  新鲜水果，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 04.01.01");
+end
+
+rule "禁止添加香料香精 04.02.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "新鲜蔬菜", firedRules not contains "禁止添加香料香精 04.02.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 新鲜蔬菜，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 04.02.01");
+end
+
+rule "禁止添加香料香精 04.02.02.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "冷冻蔬菜", firedRules not contains "禁止添加香料香精 04.02.02.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 冷冻蔬菜，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 04.02.02.01");
+end
+
+rule "禁止添加香料香精 04.03.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "新鲜食用菌和藻类", firedRules not contains "禁止添加香料香精 04.03.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 新鲜食用菌和藻类，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 04.03.01");
+end
+
+rule "禁止添加香料香精 04.03.02.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "冷冻食用菌和藻类", firedRules not contains "禁止添加香料香精 04.03.02.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 冷冻食用菌和藻类，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 04.03.02.01");
+end
+
+rule "禁止添加香料香精 06.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "原粮", firedRules not contains "禁止添加香料香精 06.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 原粮，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 06.01");
+end
+
+rule "禁止添加香料香精 06.02.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "大米", firedRules not contains "禁止添加香料香精 06.02.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 大米，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 06.02.01");
+end
+
+rule "禁止添加香料香精 06.03.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "小麦粉", firedRules not contains "禁止添加香料香精 06.03.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 小麦粉，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 06.03.01");
+end
+
+rule "禁止添加香料香精 06.04.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "杂粮粉", firedRules not contains "禁止添加香料香精 06.04.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 杂粮粉，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 06.04.01");
+end
+
+rule "禁止添加香料香精 06.05.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "食用淀粉", firedRules not contains "禁止添加香料香精 06.05.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 食用淀粉，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 06.05.01");
+end
+
+rule "禁止添加香料香精 08.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "生、鲜肉", firedRules not contains "禁止添加香料香精 08.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 生、鲜肉，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 08.01");
+end
+
+rule "禁止添加香料香精 09.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "鲜水产", firedRules not contains "禁止添加香料香精 09.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 鲜水产，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 09.01");
+end
+
+rule "禁止添加香料香精 10.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "鲜蛋", firedRules not contains "禁止添加香料香精 10.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 鲜蛋，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 10.01");
+end
+
+rule "禁止添加香料香精 11.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "食糖", firedRules not contains "禁止添加香料香精 11.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 食糖，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 11.01");
+end
+
+rule "禁止添加香料香精 11.03.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "蜂蜜", firedRules not contains "禁止添加香料香精 11.03.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 蜂蜜，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 11.03.01");
+end
+
+rule "禁止添加香料香精 12.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "盐及代盐制品", firedRules not contains "禁止添加香料香精 12.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 盐及代盐制品，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 12.01");
+end
+
+rule "禁止添加香料香精 13.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "婴幼儿配方食品", firedRules not contains "禁止添加香料香精 13.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 婴幼儿配方食品，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 13.01");
+end
+
+rule "禁止添加香料香精 14.01.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "饮用天然矿泉水", firedRules not contains "禁止添加香料香精 14.01.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 饮用天然矿泉水，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 14.01.01");
+end
+
+rule "禁止添加香料香精 14.01.02"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "饮用纯净水", firedRules not contains "禁止添加香料香精 14.01.02")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 饮用纯净水，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 14.01.02");
+end
+
+rule "禁止添加香料香精 14.01.03"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains " 其他类饮用水", firedRules not contains "禁止添加香料香精 14.01.03")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于  其他类饮用水，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 14.01.03");
+end
+
+rule "禁止添加香料香精 16.02.01"
+/* ruleType:配方
+   status:1
+   standard:50l */
+    when
+        $m : Entity(types contains "茶叶、咖啡", firedRules not contains "禁止添加香料香精 16.02.01")
+        $e : Entity(literal matches "食品用天然香料" || types contains "食品用天然香料" || literal matches "食品用合成香料" || types contains "食品用合成香料") from $m.properties
+    then
+        $m.updateRiskyInfo("本品属于 茶叶、咖啡，不得含有："+ $e.getLiteral());
+        $m.addRiskLevel(1.0);
+        $m.setRisky(true);
+        $m.addStandardId(50l);
+        $m.addFiredRule("禁止添加香料香精 16.02.01");
+end
+
